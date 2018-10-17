@@ -1,8 +1,23 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from 'vue';
+import App from './App';
+import router from './router';
 
-Vue.config.productionTip = false
+// import '@/assets/icons/iconfont.js';
+
+import ElementUI from 'element-ui';
+Vue.use(ElementUI, {
+  size: 'small'
+});
+
+import '@/styles/index.less';
+import '@/assets/icons/iconfont.css';
+
 
 new Vue({
-  render: h => h(App)
-}).$mount('#app')
+  el: '#app',
+  router,
+  components: {
+    App
+  },
+  template: '<App/>'
+});
